@@ -6,7 +6,12 @@ page {
   flex-direction: column;
   justify-content: flex-start;
 }
-
+.decration{
+ line-height:40rpx;
+  color:#fff;
+  display:inline-block;
+  /* font-family:FZShuTi; */
+}
 .userinfo, .uploader, .tunnel {
   margin-top: 40rpx;
   height: 140rpx;

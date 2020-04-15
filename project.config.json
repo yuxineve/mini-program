@@ -11,6 +11,7 @@
 	"appid": "wxee3e3109b86e35f5",
 	"projectname": "Leo%26Eve",
 	"libVersion": "2.2.5",
+	"compileType": "miniprogram",
 	"condition": {
 		"search": {
 			"current": -1,

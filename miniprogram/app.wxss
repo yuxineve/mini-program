@@ -1,7 +1,11 @@
 /**app.wxss**/
+@import "colorui/main.wxss";
+@import "colorui/icon.wxss";
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
+  background: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1559626099663&di=f431a5a58a13c2c598f5cf75bf85bd89&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201708%2F05%2F20170805172334_XQjcG.png) no-repeat;
+  padding: 10rpx 30rpx;
 } 

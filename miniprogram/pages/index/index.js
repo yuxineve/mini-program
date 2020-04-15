@@ -7,10 +7,22 @@ Page({
     userInfo: {},
     logged: false,
     takeSession: false,
-    requestResult: ''
+    requestResult: '',
+    initData:'',
+    audioData:{         
+      src: 'http://m701.music.126.net/20190604091357/0bb1e92b436988fee0c2b21e07bb4388/jdyyaac/025f/520f/510b/5563126d44eea6feab7afa10b3a9c354.m4a',
+    },
   },
-
+  onReady: function (e) {
+    // 使用 wx.createAudioContext 获取 audio 上下文 context
+    this.audioCtx = wx.createAudioContext('myAudio');
+    this.audioCtx.play();
+  },
   onLoad: function() {
+    const date = this.getInitaDate(new Date());
+    this.setData({
+      initData:date,
+    })
     if (!wx.cloud) {
       wx.redirectTo({
         url: '../chooseLib/chooseLib',
@@ -35,7 +47,18 @@ Page({
       }
     })
   },
-
+  getInitaDate: function(date){
+    const year = date.getFullYear();
+    let month = date.getMonth() + 1;
+    const day = date.getDate();
+    month = month>9 ? month : '0' + month;
+    
+    const hour = date.getHours();
+    const min = date.getMinutes();
+    const sec = date.getSeconds();
+  
+    return year + '-' + month + '-' + day + ' ' + hour + ':' +min + ':' + sec;
+  },
   onGetUserInfo: function(e) {
     if (!this.logged && e.detail.userInfo) {
       this.setData({
